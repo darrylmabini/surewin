@@ -6,13 +6,13 @@ module.exports = {
   entry: './assets/js/system/main.ts',
   resolve: {    
     alias: {
-      sass: path.resolve(__dirname, './assets/sass/'),
-      view: path.resolve(__dirname, './assets/js/view/'),
-      model: path.resolve(__dirname, './assets/js/model/'),
-      config: path.resolve(__dirname, './assets/js/config/'),
-      system: path.resolve(__dirname, './assets/js/system/'),
-      libraries: path.resolve(__dirname, './assets/js/libraries/'),
-      controller: path.resolve(__dirname, './assets/js/controller/')
+      Sass: path.resolve(__dirname, './assets/sass/'),
+      View: path.resolve(__dirname, './assets/js/view/'),
+      Model: path.resolve(__dirname, './assets/js/model/'),
+      Config: path.resolve(__dirname, './assets/js/config/'),
+      System: path.resolve(__dirname, './assets/js/system/'),
+      Libraries: path.resolve(__dirname, './assets/js/libraries/'),
+      Controller: path.resolve(__dirname, './assets/js/controller/')
     },
     extensions: ['.js', '.ts']
   },

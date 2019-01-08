@@ -1,5 +1,4 @@
-import { BaseController } from "./BaseController";
-import { getSupportedCodeFixes } from "typescript";
+import { BaseController } from "Controller/BaseController";
 
 export class HomepageController extends BaseController {
     render() {

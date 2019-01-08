@@ -1,4 +1,4 @@
-import { View } from 'system/view';
+import { View } from 'System/view';
 
 export class BaseController {
     context: any

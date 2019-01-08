@@ -1,7 +1,7 @@
-import routes from 'config/routes.json';
+import routes from 'Config/routes.json';
 import page from 'page';
 
-import { Router } from 'system/router';
+import { Router } from 'System/router';
 
 let App: any = {};
 

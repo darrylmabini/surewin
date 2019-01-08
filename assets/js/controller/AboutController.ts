@@ -1,4 +1,4 @@
-import { BaseController } from "./BaseController";
+import { BaseController } from "Controller/BaseController";
 
 export class AboutController extends BaseController {
     render() {
