@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "watch": "webpack --env=local --progress --hide-modules --colors --watch --config webpack.dev.js",
+    "dist": "webpack --env=local --progress --hide-modules --colors --watch --config webpack.prod.js"
+  },
+  "devDependencies": {
+    "handlebars": "^4.0.11",
+    "handlebars-loader": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.11.0",
+    "page": "^1.11.3",
+    "sass-loader": "7.*",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.2.2",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.1",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "@types/node": "^10.12.18",
+    "clean-webpack-plugin": "^1.0.0",
+    "promise-polyfill": "^7.1.2"
+  }
+}

@@ -1,0 +1,13 @@
+# excluding folders and files
+vendor/
+node_modules/
+
+# Ignore generated assets
+/web/images
+/web/css
+/web/js
+/web/*.html
+
+# files created by the build process
+yarn.lock
+composer.lock
