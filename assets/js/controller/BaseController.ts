@@ -8,6 +8,13 @@ export class BaseController {
     }
 
     view() {
+        View.h = {
+            basePath: this.basePath()
+        };
         return View;
+    }
+
+    basePath() {
+        return `/${this.context.params.lang}`;
     }
 }

@@ -1,4 +1,4 @@
 {
-    "/entry": "HomepageController",
+    "/": "HomepageController",
     "/about": "AboutController"
 }

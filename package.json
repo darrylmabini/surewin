@@ -1,7 +1,7 @@
 {
   "scripts": {
     "watch": "webpack --env=local --progress --hide-modules --colors --watch --config webpack.dev.js",
-    "dist": "webpack --env=local --progress --hide-modules --colors --watch --config webpack.prod.js"
+    "dist": "webpack --env=production --progress --hide-modules --colors --watch --config webpack.prod.js"
   },
   "devDependencies": {
     "handlebars": "^4.0.11",
