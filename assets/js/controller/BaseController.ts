@@ -1,3 +1,5 @@
+require('Sass/app.scss');
+
 import { View } from 'System/view';
 
 export class BaseController {

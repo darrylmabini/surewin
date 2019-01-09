@@ -1,6 +1,12 @@
 const path = require('path');
-const cleanWebpackPlugin = require('clean-webpack-plugin');
-const htmlWebpackPlugin = require('html-webpack-plugin');
+
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
+const dateTimeHash = new Date().getTime();
 
 module.exports = {
     entry: './assets/js/system/main.ts',
@@ -17,8 +23,8 @@ module.exports = {
         extensions: ['.js', '.ts']
     },
     output: {
-        path: path.resolve(__dirname, 'web/js/'),
-        filename: 'app.js'
+        path: path.resolve(__dirname, 'web/'),
+        filename: './js/app.' + dateTimeHash + '.js'
     },
     module: {
         rules: [
@@ -27,21 +33,43 @@ module.exports = {
                 use: 'ts-loader',
                 exclude: /node_modules/
             }, {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                    'sass-loader'
+                ]
+            },{
                 test: /\.handlebars$/,
                 loader: 'handlebars-loader'
             }
         ]
     },
     plugins: [
-        new cleanWebpackPlugin(['web'], {
+        new CleanWebpackPlugin(['web'], {
             verbose: false
         }),
-        new htmlWebpackPlugin({
-            customHash: 'config.CustomTimeHash',
+        new MiniCssExtractPlugin({
+            filename: './css/app.' + dateTimeHash + '.css'
+        }),
+        new HtmlWebpackPlugin({
+            dateTimeHash: dateTimeHash,
             inject: false,
             hash: false,
             template: path.resolve(__dirname, 'assets/js/view/html') + '/page.handlebars',
             filename: path.resolve(__dirname, 'web') + '/index.html'
-        })
+        }),
+        new UglifyJsPlugin({
+            cache: true,
+            parallel: true,
+            sourceMap: true
+        }),
+        new OptimizeCSSAssetsPlugin({})
     ]
 };
