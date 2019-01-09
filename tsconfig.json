@@ -11,13 +11,13 @@
         "sourceMap": true,
         "baseUrl": "./",
         "paths": {
-            "Sass*": ["assets/sass/*"],
-            "View*": ["assets/js/view/*"],
-            "Model*": ["assets/js/model/*"],
-            "Config*": ["assets/js/config/*"],
-            "System*": ["assets/js/system/*"],
-            "Libraries*": ["assets/js/libraries/*"],
-            "Controller*": ["assets/js/controller/*"]
+            "Sass/*": ["assets/sass/*"],
+            "View/*": ["assets/js/view/*"],
+            "Model/*": ["assets/js/model/*"],
+            "Config/*": ["assets/js/config/*"],
+            "System/*": ["assets/js/system/*"],
+            "Libraries/*": ["assets/js/libraries/*"],
+            "Controller/*": ["assets/js/controller/*"]
         }
     },
     "include": [
