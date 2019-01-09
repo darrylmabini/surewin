@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "lib": ["es2015", "dom"],
-        "types": ["node"],
+        // "types": ["node"],
         "module": "commonjs",
         "noImplicitAny": false,
         "removeComments": true,

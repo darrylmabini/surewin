@@ -1,3 +1,5 @@
+require('Sass/app.scss');
+
 import routes from 'Config/routes.json';
 import page from 'page';
 

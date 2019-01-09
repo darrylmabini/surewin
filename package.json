@@ -22,7 +22,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "page": "^1.11.3",
-    "request": "^2.88.0"
+    "axios": "^0.18.0",
+    "page": "^1.11.3"
   }
 }

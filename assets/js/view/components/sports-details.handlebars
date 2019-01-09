@@ -1,0 +1,34 @@
+{{#if sportsOdds}}
+    <h3>Matches</h3>
+    <ul id="matches">
+        {{#each sportsOdds}}
+            <li>
+                <div class="teams">{{teams.[0]}} vs {{teams.[1]}}</div>
+                {{#if sites}}
+                    {{#each sites}}
+                        <div class="sites">
+                            <div class="name">{{site_nice}}</div>
+                            {{#if odds.h2h}}
+                                <table>
+                                    <tr>
+                                        <th>Win</th>
+                                        <th>Draw</th>
+                                        <th>Win</th>
+                                    </tr>
+                                    <tr>
+                                        <td>{{odds.h2h.[0]}}</td>
+                                        <td>{{odds.h2h.[1]}}</td>
+                                        <td>{{odds.h2h.[2]}}</td>
+                                    </tr>
+                                </table>
+                            {{/if}}
+                        </div>
+                    {{/each}}
+                {{/if}}
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>No current matches.</p>
+{{/if}}
+<a href="javascript:history.back()">&lsaquo; Back</a>

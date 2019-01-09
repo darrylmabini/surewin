@@ -1,4 +1,67 @@
 body {
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
+    background: #dddddd;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {
+    margin: 0 auto;
+    width: 80%;
+}
+
+#navigation {
+    padding: 0;
+    background: #444444;
+    overflow: hidden;
+
+    li {
+        float: left;
+        list-style: none;
+        border-right: 1px solid #222222;
+    }
+
+    li a {
+        color: #eeeeee;
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-left: 1px solid #777777;
+    }
+}
+
+#matches {
+    padding: 0;
+    overflow: hidden;
+
+    li {
+        list-style: none;
+    }
+
+    li .teams {
+        color: #ffffff;
+        background: #4CAF50;
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
+    }
+
+    li .name {
+        padding: 5px;
+        background: #eeeeee;
+    }
+
+    table {
+        font-size: .85em;
+        text-align: center;
+        width: 20%;
+    }
+
+    td {
+        border: 1px solid;
+    }
+}
+
+.processing {
+    opacity: .5;
 }

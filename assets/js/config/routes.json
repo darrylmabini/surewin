@@ -1,4 +1,6 @@
 {
     "/": "HomepageController",
-    "/about": "AboutController"
+    "/about": "AboutController",
+    "/sports": "SportsController",
+    "/sports/:key": "SportsDetailsController"
 }

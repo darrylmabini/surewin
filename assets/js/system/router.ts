@@ -25,7 +25,6 @@ export class Router {
 
     initializeController(context: any, namespace: string = 'ExceptionController') {
         import(`Controller/${namespace}`).then(c => {
-            // console.log(context);
             const controller = new c[namespace](context);
             controller.render();
         });

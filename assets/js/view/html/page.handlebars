@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="/css/app.{{ htmlWebpackPlugin.options.dateTimeHash }}.css">
 </head>
 <body>
-    <div id="content"></div>
-    <script src="/js/app.{{ htmlWebpackPlugin.options.dateTimeHash }}.js"></script>
+    <div id="main">
+        {{> '../components/header' }}
+        {{> '../components/navigation' }}
+        <div id="content"></div>
+        <script src="/js/app.{{ htmlWebpackPlugin.options.dateTimeHash }}.js"></script>
+    </div>
 </body>
 </html>

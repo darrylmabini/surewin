@@ -2,9 +2,7 @@ const path = require('path');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const dateTimeHash = new Date().getTime();
 
@@ -37,17 +35,15 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true
-                        }
-                    },
+                    'css-loader',
                     'sass-loader'
                 ]
             },{
                 test: /\.handlebars$/,
-                loader: 'handlebars-loader'
+                loader: 'handlebars-loader',
+                options: {
+                    helperDirs: path.join(__dirname, './assets/js/libraries/handlebars/helpers')
+                }
             }
         ]
     },
@@ -64,12 +60,6 @@ module.exports = {
             hash: false,
             template: path.resolve(__dirname, 'assets/js/view/html') + '/page.handlebars',
             filename: path.resolve(__dirname, 'web') + '/index.html'
-        }),
-        new UglifyJsPlugin({
-            cache: true,
-            parallel: true,
-            sourceMap: true
-        }),
-        new OptimizeCSSAssetsPlugin({})
+        })
     ]
 };

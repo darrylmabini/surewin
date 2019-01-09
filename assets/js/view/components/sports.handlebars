@@ -1,0 +1,9 @@
+{{#if sports }}
+    <ul class="sports">
+        {{#each sports}}
+            <li><a href="{{ ../h.currentPath }}/{{ key }}">{{ title }}</a></li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>No sports found.</p>
+{{/if}}
