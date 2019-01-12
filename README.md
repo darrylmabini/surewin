@@ -1,3 +1,3 @@
 # Surewin
 
-Simple javascript framework for SPA web application.
+Simple javascript framework for single page web application.
