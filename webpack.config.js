@@ -7,16 +7,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const dateTimeHash = new Date().getTime();
 
 module.exports = {
-    entry: './assets/js/system/main.ts',
+    entry: './src/site/system/main.ts',
     resolve: {
         alias: {
-            Sass: path.resolve(__dirname, './assets/sass/'),
-            View: path.resolve(__dirname, './assets/js/view/'),
-            Model: path.resolve(__dirname, './assets/js/model/'),
-            Config: path.resolve(__dirname, './assets/js/config/'),
-            System: path.resolve(__dirname, './assets/js/system/'),
-            Libraries: path.resolve(__dirname, './assets/js/libraries/'),
-            Controller: path.resolve(__dirname, './assets/js/controller/')
+            Sass: path.resolve(__dirname, './src/site/assets/sass/'),
+            View: path.resolve(__dirname, './src/site/view/'),
+            Model: path.resolve(__dirname, './src/site/model/'),
+            Config: path.resolve(__dirname, './src/site/config/'),
+            System: path.resolve(__dirname, './src/site/system/'),
+            Libraries: path.resolve(__dirname, './src/site/libraries/'),
+            Controller: path.resolve(__dirname, './src/site/controller/')
         },
         extensions: ['.js', '.ts']
     },
@@ -42,7 +42,7 @@ module.exports = {
                 test: /\.handlebars$/,
                 loader: 'handlebars-loader',
                 options: {
-                    helperDirs: path.join(__dirname, './assets/js/libraries/handlebars/helpers')
+                    helperDirs: path.join(__dirname, './src/site/libraries/handlebars/helpers')
                 }
             }
         ]
@@ -58,7 +58,7 @@ module.exports = {
             dateTimeHash: dateTimeHash,
             inject: false,
             hash: false,
-            template: path.resolve(__dirname, 'assets/js/view/html') + '/page.handlebars',
+            template: path.resolve(__dirname, 'src/site/view/html') + '/page.handlebars',
             filename: path.resolve(__dirname, 'web') + '/index.html'
         })
     ]

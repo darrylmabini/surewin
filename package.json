@@ -1,4 +1,10 @@
 {
+  "name": "surewin",
+  "license": "BSD-3-Clause",
+  "author": {
+    "name": "Darryl Mabini",
+    "email": "darryl.mabii@gmail.com"
+  },
   "scripts": {
     "watch": "webpack --env=local --progress --hide-modules --colors --watch --config webpack.dev.js",
     "dist": "webpack --env=production --progress --hide-modules --colors --config webpack.prod.js"

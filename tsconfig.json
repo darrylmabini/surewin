@@ -11,18 +11,18 @@
         "sourceMap": true,
         "baseUrl": "./",
         "paths": {
-            "Sass/*": ["assets/sass/*"],
-            "View/*": ["assets/js/view/*"],
-            "Model/*": ["assets/js/model/*"],
-            "Config/*": ["assets/js/config/*"],
-            "System/*": ["assets/js/system/*"],
-            "Libraries/*": ["assets/js/libraries/*"],
-            "Controller/*": ["assets/js/controller/*"]
+            "Sass/*": ["src/site/assets/sass/*"],
+            "View/*": ["src/site/view/*"],
+            "Model/*": ["src/site/model/*"],
+            "Config/*": ["src/site/config/*"],
+            "System/*": ["src/site/system/*"],
+            "Libraries/*": ["src/site/libraries/*"],
+            "Controller/*": ["src/site/controller/*"]
         }
     },
     "include": [
-        "assets/**/*.ts",
-        "assets/**/*.json"
+        "src/site/**/*.ts",
+        "src/site/**/*.json"
     ],
     "exclude": [
         "node_modules"

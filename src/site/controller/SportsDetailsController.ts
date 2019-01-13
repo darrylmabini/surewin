@@ -20,9 +20,7 @@ export class SportsDetailsController extends BaseController {
                 sportsOdds: sportsOdds
             });
         })).catch(function(error) {
-            c.view().render('components/sports-details.handlebars', {
-                sportsOdds: {}
-            });
+            c.view().render('components/sports-details.handlebars');
         });
     }
 

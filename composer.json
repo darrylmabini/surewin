@@ -1,9 +1,9 @@
 {
-    "name": "ssb/surewin",
+    "name": "sportsbook/surewin",
     "description": "Sure Win Sportsbook",
     "autoload": {
       "psr-4": {
-        "App\\": "src/"
+        "App\\": "src/api/"
       }
     },
     "require": {
