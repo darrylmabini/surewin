@@ -13,6 +13,10 @@ export class SportsDetailsController extends BaseController {
         ];
     }
 
+    template() {
+        this.view().render('templates/classic.handlebars');
+    }
+
     render() {
         const c = this;
 
@@ -27,10 +31,14 @@ export class SportsDetailsController extends BaseController {
             }
             
             c.view().render('components/sports-details.handlebars', {
+                container: '#content-component',
                 sportsOdds: sportsOdds
             });
         })).catch(function(error) {
-            c.view().render('components/sports-details.handlebars');
+            console.log(error);
+            c.view().render('components/sports-details.handlebars', {
+                container: '#content-component'
+            });
         });
     }
 
