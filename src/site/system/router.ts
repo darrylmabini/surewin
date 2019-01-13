@@ -26,15 +26,35 @@ export class Router {
     initializeController(context: any, namespace: string = 'ExceptionController') {
         import(`Controller/${namespace}`).then(c => {
             const controller = new c[namespace](context);
-            controller.render();
+            if (typeof controller.render === 'function') {
+                controller.render();
+            }
+            if (typeof controller.components === 'function') {
+                const components = controller.components();
+                for (const i in components) {
+                    if (components.hasOwnProperty(i)) {
+                        components[i].render();
+                    }
+                }
+            }
         });
     }
 
     notFoundHandler() {
         this.page('*', function(context) {
             import('Controller/NotFoundController').then(c => {
-                const controller = new c['NotFoundController'](context);
-                controller.render();
+                const controller: any  = new c['NotFoundController'](context);
+                if (typeof controller.render === 'function') {
+                    controller.render();
+                }
+                if (typeof controller.components === 'function') {
+                    const components = controller.components();
+                    for (const i in components) {
+                        if (components.hasOwnProperty(i)) {
+                            components[i].render();
+                        }
+                    }
+                }
             });
         });
     }

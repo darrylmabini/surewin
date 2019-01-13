@@ -13,9 +13,10 @@ module.exports = {
             Sass: path.resolve(__dirname, './src/site/assets/sass/'),
             View: path.resolve(__dirname, './src/site/view/'),
             Model: path.resolve(__dirname, './src/site/model/'),
-            Config: path.resolve(__dirname, './src/site/config/'),
+            Config: path.resolve(__dirname, './src/site/app/config/'),
             System: path.resolve(__dirname, './src/site/system/'),
             Libraries: path.resolve(__dirname, './src/site/libraries/'),
+            Component: path.resolve(__dirname, './src/site/component/'),
             Controller: path.resolve(__dirname, './src/site/controller/')
         },
         extensions: ['.js', '.ts']

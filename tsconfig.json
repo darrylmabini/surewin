@@ -17,6 +17,7 @@
             "Config/*": ["src/site/config/*"],
             "System/*": ["src/site/system/*"],
             "Libraries/*": ["src/site/libraries/*"],
+            "Component/*": ["src/site/component/*"],
             "Controller/*": ["src/site/controller/*"]
         }
     },
