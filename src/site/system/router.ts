@@ -26,8 +26,8 @@ export class Router {
     initializeController(context: any, namespace: string = 'ExceptionController') {
         import(`Controller/${namespace}`).then(c => {
             const controller = new c[namespace](context);
-            if (typeof controller.template === 'function') {
-                controller.template();
+            if (typeof controller.layout === 'function') {
+                controller.layout();
             }
             if (typeof controller.render === 'function') {
                 controller.render();
@@ -47,8 +47,8 @@ export class Router {
         this.page('*', function(context) {
             import('Controller/NotFoundController').then(c => {
                 const controller: any  = new c['NotFoundController'](context);
-                if (typeof controller.template === 'function') {
-                    controller.template();
+                if (typeof controller.layout === 'function') {
+                    controller.layout();
                 }
                 if (typeof controller.render === 'function') {
                     controller.render();

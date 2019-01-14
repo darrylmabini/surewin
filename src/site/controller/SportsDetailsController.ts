@@ -1,48 +1,19 @@
-import request from 'axios';
-
 import { BaseController } from "Controller/BaseController";
 
 import { HeaderComponent } from "Component/HeaderComponent";
 import { NavigationComponent } from "Component/NavigationComponent";
+import { SportsDetailsComponent } from "Component/SportsDetailsComponent";
 
 export class SportsDetailsController extends BaseController {
     components() {
         return [
             new HeaderComponent(this.context),
             new NavigationComponent(this.context),
+            new SportsDetailsComponent(this.context)
         ];
     }
 
-    template() {
-        this.view().render('templates/classic.handlebars');
-    }
-
-    render() {
-        const c = this;
-
-        request.all([this.getOdds()]).then(request.spread(function (odds: any) {
-            let sportsOdds: Array<any> = [];
-            let oddsData: any = odds.data.data;
-
-            for (const i in oddsData) {
-                if (oddsData.hasOwnProperty(i) && oddsData[i].sport_key == c.context.params.key) {
-                    sportsOdds.push(oddsData[i]);
-                }
-            }
-            
-            c.view().render('components/sports-details.handlebars', {
-                container: '#content-component',
-                sportsOdds: sportsOdds
-            });
-        })).catch(function(error) {
-            console.log(error);
-            c.view().render('components/sports-details.handlebars', {
-                container: '#content-component'
-            });
-        });
-    }
-
-    private getOdds() {
-        return request.get('https://api.the-odds-api.com/v3/odds?sport=soccer_epl&region=uk&mkt=h2h&apiKey=9e91bb36baf56ca95af2d82c7c683eee');
+    layout() {
+        this.view().render('layouts/classic.handlebars');
     }
 }

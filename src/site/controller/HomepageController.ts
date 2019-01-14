@@ -13,7 +13,7 @@ export class HomepageController extends BaseController {
         ];
     }
 
-    template() {
-        this.view().render('templates/classic.handlebars');
+    layout() {
+        this.view().render('layouts/classic.handlebars');
     }
 }
